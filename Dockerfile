@@ -9,6 +9,9 @@ RUN apt-get install -y --fix-missing \
     git \
     wget \
     curl \
+    libsm6 \
+    libxext6 \
+    libxrender-dev \
     graphicsmagick \
     libgraphicsmagick1-dev \
     libatlas-dev \
@@ -27,7 +30,6 @@ RUN apt-get install -y --fix-missing \
     && apt-get clean && rm -rf /tmp/* /var/tmp/*
 
 RUN pip install -r requirements.txt
-
 # If you wanted to use this Dockerfile to run your own app instead, maybe you would do this:
 # COPY . /root/your_app_or_whatever
 # RUN cd /root/your_app_or_whatever && \
